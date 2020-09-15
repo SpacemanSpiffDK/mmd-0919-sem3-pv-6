@@ -18,18 +18,17 @@ body {
 	}
 }
 
-@media (min-width: 641px){
-	.flex > div {
+@media (min-width: 641px) {
+	.flex>div {
 		width: 50%;
 	}
 }
 
-@media (max-width: 640px){
+@media (max-width: 640px) {
 	.flex {
 		display: block;
 	}
-
-	.flex > div {
+	.flex>div {
 		width: 100%;
 		margin-bottom: var(--frp-density-l);
 	}
@@ -43,7 +42,7 @@ h1, h2, p {
 /* test styles */
 
 body {
-	background-color: var(--frp-color-background);	
+	background-color: var(--frp-color-background);
 	padding: 0;
 	overflow-x: hidden;
 }
@@ -63,9 +62,48 @@ h1 {
 	padding-bottom: 56.25%;
 }
 
-.video-js .vjs-big-play-button {
+video {
+	outline: none;
+}
+
+#controls {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+#controls button {
+	display: block;
+	margin: 0;
+	border: none;
+	height: 0;
+	padding-bottom: 50%;
+	font-weight: 600;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	cursor: pointer;
+	opacity: .8;
+	transition: opacity .3s ease-in-out;
+	outline: none;
+	color: transparent;
+	position: relative;
+}
+
+#controls button:hover {
+	opacity: 1;
+}
+
+#controls button:before {
+	color: #fff;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+#controls #red 		{ background-color: red; }
+#controls #green 	{ background-color: green; }
+#controls #blue 	{ background-color: blue; }
+
+#controls #red:before 	{ content: "do"; }
+#controls #green:before { content: "not"; }
+#controls #blue:before 	{ content: "click"; }
