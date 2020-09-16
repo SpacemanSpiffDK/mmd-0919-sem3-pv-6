@@ -25,3 +25,4 @@ elmsButtons.forEach((button) => {               // loop through the buttons
         video.play();       // start the player
     });
 });
+
